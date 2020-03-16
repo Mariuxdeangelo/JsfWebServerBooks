@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources Public "-GlassFish.org//DTD GlassFish Application Server 3.1 Resource Deffinitions\ //EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+    <jdbc-resource enabled="true"
+                   jndi-name="jdbc/books"
+                   object-type="user"
+                   pool-name="mysql_Books_booksPool"/>
+    <jdbc-connection-pool> <!-- attributes omitted for brevity -->
+        <property name="serverName" value="localhost"/>
+        <property name="portNumber" value="3306"/>
+        <property name="databaseName" value="books"/>
+        <property name="User" value="root"/>
+        <property name="Password" value="Development!2205"/>
+        <property name="URL" value="jdbc:mysql://localhost:3306/Books"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+
+    </jdbc-connection-pool>
+</resources>

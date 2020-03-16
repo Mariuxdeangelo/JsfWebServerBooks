@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html [<!ENTITY copy "&#169;">]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <title>Books</title>
+        <h:outputStylesheet name="css/books.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <header id="header">
+                <h1>Marius Bücherliste</h1>
+            </header>
+            <main id="main">
+                <h1>Edit categories</h1>
+                <h:form>
+                    <h:dataTable value="#{categoryEditor.categories}" var="cat">
+                        <h:column>
+                            <h:commandLink action="#{categoryEditor.deleteCategory(cat)}">
+                                <h:graphicImage alt="delete"
+                                                name="Delete.png"
+                                                library="smallIcons"
+                                                title="delete"/>
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <h:inputText value="#{cat.name}"/>
+                        </h:column>
+                    </h:dataTable>
+                    <h:commandLink styleClass="button"
+                                   value="Add category"
+                                   action="#{categoryEditor.addCategory}"/>
+                    <h:commandButton styleClass="button"
+                                     value="Save"
+                                     action="#{categoryEditor.save}"/>
+                </h:form>
+            </main>
+            <nav id="navigation">
+                This is the navigation
+            </nav>
+            <footer>
+                &copy; Marius Biebel
+
+                <h:outputLink value="http://www.google.de">
+                    Google
+                </h:outputLink>
+
+                <h:link value="About" outcome="index.xhtml"/>
+            </footer>
+        </div>
+    </h:body>
+
+</html>
